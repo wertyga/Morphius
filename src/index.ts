@@ -12,12 +12,12 @@ import { apiRoute } from './api';
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
-app.use('/api', apiRoute);
 
-app.get('/healthcheck', (resq, res) => {
+app.get('/healthcheck', (req, res) => {
   res.json({ healthcheck: true });
 });
+app.use(bodyParser.json());
+app.use('/api', apiRoute);
 
 app.listen(process.env.PORT, () =>
   console.log(`-- Server ran at :${process.env.PORT}`)
