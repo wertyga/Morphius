@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES5",
+    "baseUrl": "./src",
+    "outDir": "public",
+    "lib": ["ES6"],
+    "sourceMap": false,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
