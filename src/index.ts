@@ -4,7 +4,7 @@ import cors from 'cors';
 // --- DOT_ENV ---
 import dotenv from 'dotenv';
 dotenv.config({
-	path: `.env.${process.env.NODE_ENV || 'development'}`,
+  path: `.env.${process.env.NODE_ENV || 'development'}`,
 });
 // -------
 
@@ -15,4 +15,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/api', apiRoute);
 
-app.listen(process.env.PORT, () => console.log(`-- Server ran at :${process.env.PORT}`));
+app.get('/healthcheck', (resq, res) => {
+  res.json({ healthcheck: true });
+});
+
+app.listen(process.env.PORT, () =>
+  console.log(`-- Server ran at :${process.env.PORT}`)
+);
