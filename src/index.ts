@@ -13,8 +13,8 @@ import { apiRoute } from './api';
 const app = express();
 app.use(cors());
 
-app.get('/healthcheck', (req, res) => {
-  res.json({ healthcheck: true });
+app.post('/healthcheck', (req, res) => {
+  res.json({ healthcheck: true, body: req.body });
 });
 app.use(bodyParser.json());
 app.use('/api', apiRoute);
