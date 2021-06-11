@@ -7,7 +7,6 @@ randomizerRoute.post('/', async (req, res) => {
   const {
     body: { data },
   } = req;
-  console.log(data, typeof data, req.body);
   if (data instanceof Array) {
     const randomIndex = Math.ceil(Math.random() * data.length) - 1;
     res.json({ data: data[randomIndex] });
